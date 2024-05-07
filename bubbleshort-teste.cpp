@@ -27,7 +27,7 @@ int main() {
 		    printf("\n ");
 		    printf("Jatual = %4d ", j ); 
 		    printf("\n ");
-			if (lista[j] < lista[j+1]){
+			if (lista[j] > lista[j+1]){
 				temp = lista[j];	
 				lista[j] = lista[j+1];
 				lista[j+1] = temp;
