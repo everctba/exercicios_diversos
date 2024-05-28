@@ -5,7 +5,7 @@ from sys import argv
 baixa_audio_mp3 = True
 
 # PAssa URL AQUI EM ABIXO
-url = 'https://www.youtube.com/watch?v=BcuS8L_awqs&ab_channel=Techtrends'
+url = 'https://www.youtube.com/watch?v=P0B0jLFFYiA&ab_channel=KushGupta'
 
 
 
