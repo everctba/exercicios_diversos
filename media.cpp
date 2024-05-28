@@ -11,10 +11,12 @@ int resultado = 0;
 int temp;
 int meioTamanho;
 int parOuImpar;
+
+
 int mediavetor() {
 	
 	tam = sizeof(numeros) / sizeof(numeros[0]);
-	printf("Estou na funcão vetor media = %d\n", tam);
+	printf("Estou na funcï¿½o vetor media = %d\n", tam);
 	for (i=0; i<10; i++){
    		total = total+numeros[i];
 		resultado =total/ tam; 
@@ -22,19 +24,17 @@ int mediavetor() {
 	
 	}
 	printf("Total = %d\n", total);
-	printf("media é = %d\n", resultado);
+	printf("media ï¿½ = %d\n", resultado);
 }
 
+
 int medianadovetor() {
-	printf("Estou na funcão DMEDIANA!\n");
+	printf("Estou na funcï¿½o DMEDIANA!\n");
 	
 	for (i=0; i<10; i++) {
-//	    printf("Entrou no For\n");
+
 		for (j=0; j<10-1; j++) {
-//		    printf("J[i] = %4d ", numeros[j] ); 
-//		    printf("J[i+1] = %4d  ", numeros[j+1] );
-//		    printf("\n ");
-//		    printf("Jatual = %4d ", j ); 
+
 		    printf("\n ");
 			if (numeros[j] > numeros[j+1]){
 				temp = numeros[j];	
@@ -64,21 +64,16 @@ int medianadovetor() {
 	else{
 		printf("Mediana = %4d\n", numeros[meioTamanho]);	
 	}
-	
-
 		
 	
 	}
-	
-
-
 
 
 int main() {
 	
 	
 	for (i=0; i<10; i++){
-		printf("Digite 10 números = ");
+		printf("Digite 10 nï¿½meros = ");
 //		printf("Enter first number: ");
 //      	scanf("%d", &a);
 		scanf("%d", &numeros[i]);
@@ -100,5 +95,5 @@ int main() {
 
 
 
-// calcular media e a mediana mediana achar ordenar e  achar os números do meio soma e divide por 2 se for par se for impar pega o número.
-//moda é o número que mais aparece...
+// calcular media e a mediana mediana achar ordenar e  achar os nï¿½meros do meio soma e divide por 2 se for par se for impar pega o nï¿½mero.
+//moda ï¿½ o nï¿½mero que mais aparece...
