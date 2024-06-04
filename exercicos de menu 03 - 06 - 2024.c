@@ -31,7 +31,7 @@ void listar() {
 void incluir() {
 	system("cls");
 	int flag, i;
-	printf("=== INCLUS√O ===\n");
+	printf("=== INCLUS√ÉO ===\n");
 	
 	flag = FALSE;
 	for (i=0; i<TAM && flag == FALSE; i++){
@@ -43,7 +43,7 @@ void incluir() {
 	if (flag == TRUE) {
 		i--;
 		vet[i] = ++cont;
-		printf("\nValor incluÌdo: %d", cont);
+		printf("\nValor incluÔøΩdo: %d", cont);
 	}
 	else {
 		printf("\nVetor Cheio");
@@ -54,9 +54,9 @@ void incluir() {
 void excluir (){
 	
 	system("cls");
-	printf("=== EXCLUS√O ===\n");
+	printf("=== EXCLUSÔøΩO ===\n");
 	
-	//aqui È pra fazer em casa: pegar o ˙ltimo elemento e colocar zero pra ficar "excluido a posiÁ„o"
+	//aqui ÔøΩ pra fazer em casa: pegar o √∫ltimo elemento e colocar zero pra ficar "excluido a posiÔøΩÔøΩo"
 	getch();
 }
 
@@ -72,7 +72,7 @@ void excluir (){
  	 	printf("\n2. Excluir");
  	 	printf("\n3. Listar");
  	 	printf("\n4. Sair");
- 	 	printf("\nDigite uma opÁ„o...:");
+ 	 	printf("\nDigite uma op√ß√£o...:");
  	 	scanf("%d", &op);
  	 	switch(op){
  	 		case 1: incluir();
@@ -81,21 +81,21 @@ void excluir (){
  	 			break;
  	 		case 3: listar();
  	 			break;
- 	 		case 4: break; // sai do laÁo, sÛ para n„o mostrar erro
+ 	 		case 4: break; // sai do laÔøΩo, sÔøΩ para nÔøΩo mostrar erro
  	 		default: 
- 				printf("\n Digite um n˙mero v·lido de 1...4");
+ 				printf("\n Digite um n√∫mero v√°lido de 1...4");
 		  }
  	 	
 	} while (op !=4);
  }
 /*
 %d = vetor
-%p = È ponteiro
-%d = È digito
+%p = ÔøΩ ponteiro
+%d = ÔøΩ digito
 
 getch(); pega um caractere digitado, mas da pra usar pra parar a tela.
 
-prÈ incremento e pÛs incrmeento 
+prÔøΩ incremento e pÔøΩs incrmeento 
 a = 10
 b = a++
  --- a = 11
@@ -107,15 +107,15 @@ b = a++
 --- b = 11
 
 vai cair na prova...
-while (x<10) {				//usamos para quando n„o sabemos quantos passos vamos precisar
-}								pode nao ser executado se a variavel n„o for verdadeira, pode ser executado uma vez apenas ou mais e uma vez.
-								È necess·rio especificar uma saida ou o programa rodara atÈ a energia acaabar ou um pouse break pelo systema fechando o processo.
-for (x<0; X<10; x++){ 		//usamos quando sabemos quantos passos ser„o necess·rios
-}								for È composto de 3 elementos inicializaÁ„o condiÁ„o e passos.
-								no prÛpio cabeÁario j· tem todas as informaÁ„oes
-do { 						//usamos para quando n„o sabemos quantos passos vamos precisar
-{while (x<10);					como a condiÁ„o est· no final do laÁo, isso ganante que pelo menos uma vez ser· executado
+while (x<10) {				//usamos para quando nÔøΩo sabemos quantos passos vamos precisar
+}								pode nao ser executado se a variavel nÔøΩo for verdadeira, pode ser executado uma vez apenas ou mais e uma vez.
+								ÔøΩ necessÔøΩrio especificar uma saida ou o programa rodara atÔøΩ a energia acaabar ou um pouse break pelo systema fechando o processo.
+for (x<0; X<10; x++){ 		//usamos quando sabemos quantos passos serÔøΩo necessÔøΩrios
+}								for ÔøΩ composto de 3 elementos inicializaÔøΩÔøΩo condiÔøΩÔøΩo e passos.
+								no prÔøΩpio cabeÔøΩario jÔøΩ tem todas as informaÔøΩÔøΩoes
+do { 						//usamos para quando nÔøΩo sabemos quantos passos vamos precisar
+{while (x<10);					como a condiÔøΩÔøΩo estÔøΩ no final do laÔøΩo, isso ganante que pelo menos uma vez serÔøΩ executado
 
 
-// dentro do sitch case defaout significa que È a opÁ„o que È representa que n„o teve nem um caso igual e a mensagem de padr„o generia entra nesse caso.
+// dentro do sitch case defaout significa que ÔøΩ a opÔøΩÔøΩo que ÔøΩ representa que nÔøΩo teve nem um caso igual e a mensagem de padrÔøΩo generia entra nesse caso.
 */
