@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include<windows.h>
+
 int main() {
    while (1) {
    unsigned char bytes [4] = {};
