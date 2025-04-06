@@ -1,0 +1,530 @@
+/* Estilos Gerais */
+:root {
+   --dark-bg: #1a1a1a;
+   /* Fundo escuro principal */
+   --card-bg: #2c2c2c;
+   /* Fundo dos cards/seções */
+   --text-light: #e0e0e0;
+   /* Texto claro principal */
+   --text-secondary: #a0a0a0;
+   /* Texto secundário */
+   --accent-gold: #facc15;
+   /* Amarelo/Dourado vibrante */
+   --accent-gold-darker: #eab308;
+   /* Amarelo/Dourado mais escuro para hover */
+   --text-dark: #1f2937;
+   /* Texto escuro para usar sobre fundos claros/amarelos */
+   --focus-ring: #60a5fa;
+   /* Azul claro para anel de foco */
+   --border-color: #444;
+   /* Cor sutil para bordas */
+   --background-color: #f0f0f0;
+   --text-color: #1a1a1a;
+   --primary-color: #ffdd00;
+   /* Amarelo vibrante */
+   --shadow-color: #1a1a1a;
+}
+
+html {
+   font-size: 100%;
+   scroll-behavior: smooth;
+   /* Rolagem suave */
+}
+
+body {
+   font-family: 'Arial', sans-serif;
+   /* Fonte sans-serif simples e legível */
+   margin: 0;
+   padding: 0;
+   line-height: 1.6;
+   color: var(--text-color);
+   background-color: var(--background-color);
+   /* Padrão de ruído sutil para textura */
+   background-image: linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+   background-size: 3px 3px;
+   /* Tamanho do padrão de ruído */
+}
+
+.container {
+   width: 90%;
+   /* Aumentar um pouco a largura */
+   max-width: 1200px;
+   /* Aumentar max-width */
+   margin: 0 auto;
+   padding: 30px 15px;
+   /* Ajustar padding */
+}
+
+h1,
+h2 {
+   font-weight: bold;
+   margin-bottom: 0.5em;
+}
+
+h2 {
+   font-size: 1.8em;
+}
+
+a {
+   color: var(--accent-gold);
+   text-decoration: none;
+   font-weight: bold;
+   transition: color 0.3s ease;
+}
+
+a:hover {
+   color: var(--accent-gold-darker);
+   text-decoration: none;
+   /* Remover sublinhado no hover também */
+}
+
+/* Indicador de foco visível no tema escuro */
+a:focus-visible,
+button:focus-visible,
+.cta-button:focus-visible {
+   outline: 3px solid var(--focus-ring);
+   outline-offset: 3px;
+   border-radius: 4px;
+   /* Adicionar um leve arredondamento ao foco */
+}
+
+/* Remover outline padrão se não for navegação por teclado */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+.cta-button:focus:not(:focus-visible) {
+   outline: none;
+}
+
+img {
+   max-width: 100%;
+   height: auto;
+   display: block;
+   /* Evitar espaço extra abaixo das imagens */
+}
+
+/* Header */
+header {
+   background-color: var(--primary-color);
+   padding: 1rem 2rem;
+   border-bottom: 3px solid var(--border-color);
+   text-align: center;
+   /* Centraliza o título */
+}
+
+header h1 {
+   margin: 0;
+   font-size: 2.5rem;
+}
+
+.subtitulo {
+   font-size: 1.1em;
+   /* Reduzir um pouco */
+   font-weight: 300;
+   color: var(--text-secondary);
+}
+
+/* Hero Section */
+#hero {
+   position: relative;
+   /* Necessário para o overlay */
+   background-color: var(--dark-bg);
+   /* Fallback caso a imagem não carregue */
+   /* Imagem de fundo - SUBSTITUA O URL */
+   background-image: url('path/to/your/hero-background.jpg');
+   background-size: cover;
+   /* Cobrir toda a área */
+   background-position: center center;
+   /* Centralizar a imagem */
+   background-repeat: no-repeat;
+   padding: 60px 0;
+   text-align: center;
+   min-height: 90vh;
+   /* Altura mínima da seção */
+   display: flex;
+   /* Habilitar flexbox */
+   align-items: center;
+   /* Alinhar conteúdo verticalmente */
+   justify-content: center;
+   /* Centralizar container horizontalmente (já que o container tem margin: auto)*/
+   z-index: 1;
+   /* Garante que o conteúdo fique sobre o pseudo-elemento */
+}
+
+/* Overlay escuro sobre a imagem de fundo do Hero para legibilidade */
+#hero::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
+   /* Gradiente escuro */
+   z-index: -1;
+   /* Coloca o overlay atrás do conteúdo */
+}
+
+#hero .container {
+   /* Remover justify-content daqui, pois foi para o pai #hero */
+   width: 100%;
+   /* Ocupar toda a largura do flex container pai */
+}
+
+.hero-content {
+   display: flex;
+   flex-direction: column;
+   /* Empilhar por padrão */
+   gap: 40px;
+   align-items: center;
+   max-width: 800px;
+   /* Limitar largura do texto */
+   margin: 0 auto;
+}
+
+.hero-text h2 {
+   margin-top: 0;
+   font-size: 2.5em;
+   /* Título maior */
+   color: #fff;
+}
+
+.hero-text p {
+   font-size: 1.1em;
+   color: var(--text-secondary);
+   margin-bottom: 30px;
+}
+
+.hero-image img {
+   border: none;
+   /* Remover borda */
+   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+   /* Sombra mais sutil no dark mode */
+   max-width: 350px;
+   /* Aumentar um pouco */
+   border-radius: 8px;
+   /* Cantos arredondados */
+}
+
+/* Estilo inspirado na referência para telas maiores */
+@media (min-width: 768px) {
+   #hero {
+      text-align: left;
+   }
+
+   .hero-content {
+      flex-direction: row;
+      max-width: 1200px;
+   }
+
+   .hero-text {
+      flex: 1.2;
+      /* Dar um pouco mais de espaço ao texto */
+   }
+
+   .hero-image {
+      flex: 0.8;
+   }
+
+   .hero-text h2 {
+      font-size: 3em;
+      /* Ainda maior em desktop */
+   }
+}
+
+
+.legenda-imagem {
+   font-size: 0.9em;
+   color: var(--text-secondary);
+   margin-top: 15px;
+}
+
+/* Botão CTA (Call to Action) */
+.cta-button {
+   display: inline-block;
+   background-color: var(--accent-gold);
+   color: var(--text-dark);
+   /* Texto escuro para contraste */
+   padding: 14px 35px;
+   /* Ajustar padding */
+   font-size: 1.1em;
+   font-weight: bold;
+   border: none;
+   border-radius: 8px;
+   /* Cantos mais arredondados */
+   text-transform: none;
+   /* Sem uppercase */
+   margin-top: 20px;
+   transition: background-color 0.3s ease, transform 0.2s ease;
+   cursor: pointer;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+   background-color: var(--accent-gold-darker);
+   color: var(--text-dark);
+   text-decoration: none;
+   transform: translateY(-2px);
+   /* Leve efeito ao passar o mouse */
+}
+
+/* Estilo Geral das Seções */
+section {
+   padding: 50px 0;
+   min-height: 90vh;
+   /* Definir altura mínima */
+   display: flex;
+   /* Usar flexbox para centralizar */
+   flex-direction: column;
+   /* Empilhar conteúdo */
+   justify-content: center;
+   /* Centralizar verticalmente */
+   box-sizing: border-box;
+   /* Incluir padding na altura */
+}
+
+section:nth-of-type(odd) {
+   background-color: var(--card-bg);
+   /* Fundo alternado sutil */
+   /* Opcional: Adicionar textura aos cards */
+   /* background-image: linear-gradient(45deg, rgba(255,255,255,0.01) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.01) 50%, rgba(255,255,255,0.01) 75%, transparent 75%, transparent); */
+   /* background-size: 10px 10px; */
+}
+
+section:nth-of-type(even) {
+   background-color: var(--dark-bg);
+}
+
+/* Seção Benefícios - Estilo Card */
+#beneficios {
+   background-color: var(--card-bg);
+   border-radius: 12px;
+   /* Cantos arredondados */
+   padding: 40px;
+   /* Padding interno */
+   margin-bottom: 40px;
+   /* Espaço abaixo */
+   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+#beneficios h2 {
+   margin-top: 0;
+   text-align: center;
+   margin-bottom: 30px;
+}
+
+#beneficios ul {
+   list-style: none;
+   padding: 0;
+}
+
+#beneficios li {
+   margin-bottom: 18px;
+   font-size: 1.1em;
+   display: flex;
+   align-items: flex-start;
+   color: var(--text-light);
+}
+
+.check {
+   color: var(--accent-gold);
+   /* Usar cor de destaque */
+   font-weight: bold;
+   margin-right: 12px;
+   font-size: 1.2em;
+   flex-shrink: 0;
+   /* Evitar que o ícone encolha */
+}
+
+/* Seção Sobre o Autor */
+#sobre-autor {
+   background-color: var(--dark-bg);
+   text-align: center;
+   padding: 50px 0;
+}
+
+#sobre-autor p {
+   max-width: 700px;
+   margin-left: auto;
+   margin-right: auto;
+   color: var(--text-secondary);
+}
+
+/* Seção Depoimentos - Estilo Card */
+#depoimentos {
+   background-color: var(--dark-bg);
+}
+
+#depoimentos h2 {
+   text-align: center;
+   margin-bottom: 30px;
+}
+
+.depoimento {
+   background-color: var(--card-bg);
+   border: 1px solid var(--border-color);
+   /* Borda sutil */
+   border-left: 5px solid var(--accent-gold);
+   /* Destaque lateral */
+   padding: 25px;
+   margin-bottom: 25px;
+   border-radius: 8px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.depoimento blockquote {
+   margin: 0 0 15px 0;
+   font-style: italic;
+   font-size: 1.1em;
+   color: var(--text-light);
+}
+
+.depoimento cite {
+   display: block;
+   text-align: right;
+   font-weight: bold;
+   color: var(--text-secondary);
+   font-size: 0.95em;
+}
+
+#depoimentos p em {
+   display: block;
+   text-align: center;
+   margin-top: 30px;
+   color: var(--text-secondary);
+}
+
+/* Seção Comprar */
+#comprar {
+   background-color: var(--card-bg);
+   /* Fundo de card */
+   color: #fff;
+   padding: 60px 0;
+   text-align: center;
+   border-radius: 12px;
+   margin-top: 40px;
+   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+#comprar h2 {
+   color: #fff;
+}
+
+#comprar p {
+   font-size: 1.1em;
+   margin-bottom: 30px;
+   color: var(--text-light);
+   max-width: 600px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+#comprar .cta-button {
+   /* Já estilizado globalmente */
+}
+
+#comprar small {
+   display: block;
+   margin-top: 15px;
+   color: var(--text-secondary);
+}
+
+/* Footer */
+footer {
+   background-color: var(--dark-bg);
+   color: var(--text-secondary);
+   text-align: center;
+   padding: 20px 0;
+   font-size: 0.9em;
+   margin-top: 40px;
+   border-top: 1px solid var(--border-color);
+   /* Footer não deve ter min-height: 90vh */
+}
+
+/* Ajustes finais de responsividade */
+@media (max-width: 768px) {
+   .container {
+      width: 95%;
+      /* Usar mais espaço em telas menores */
+      padding: 20px 10px;
+   }
+
+   h1 {
+      font-size: 1.8em;
+   }
+
+   h2 {
+      font-size: 1.6em;
+   }
+
+   .hero-text h2 {
+      font-size: 2.2em;
+   }
+
+   #beneficios,
+   #comprar {
+      padding: 30px 20px;
+      border-radius: 8px;
+   }
+
+   .depoimento {
+      padding: 20px;
+   }
+}
+
+main {
+   padding: 2rem;
+}
+
+.references-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   /* Layout responsivo */
+   gap: 2rem;
+}
+
+.card {
+   background-color: #ffffff;
+   border: 3px solid var(--border-color);
+   padding: 1.5rem;
+   box-shadow: 8px 8px 0 var(--shadow-color);
+   /* Sombra sólida característica */
+   transition: transform 0.2s ease, box-shadow 0.2s ease;
+   /* Pequena transição */
+}
+
+.card:hover {
+   transform: translate(-4px, -4px);
+   box-shadow: 12px 12px 0 var(--shadow-color);
+}
+
+.card h2 {
+   font-size: 1.5rem;
+   margin-top: 0;
+}
+
+.card a {
+   display: inline-block;
+   margin-top: 1rem;
+   padding: 0.5rem 1rem;
+   background-color: var(--primary-color);
+   color: var(--text-color);
+   text-decoration: none;
+   font-weight: bold;
+   border: 2px solid var(--border-color);
+   box-shadow: 4px 4px 0 var(--shadow-color);
+   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card a:hover {
+   transform: translate(-2px, -2px);
+   box-shadow: 6px 6px 0 var(--shadow-color);
+}
+
+footer {
+   margin-top: 3rem;
+   padding: 1rem 2rem;
+   text-align: center;
+   font-size: 0.9rem;
+   color: #555;
+   border-top: 1px solid #ccc;
+}
