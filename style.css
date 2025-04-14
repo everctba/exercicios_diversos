@@ -43,6 +43,8 @@ body {
    background-image: linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
    background-size: 3px 3px;
    /* Tamanho do padrão de ruído */
+   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><path fill='green' d='M11.953 28.08l-7.1-7.102c-1.172-1.172-1.172-3.07 0-4.24l14.22-14.22c1.17-1.17 3.07-1.17 4.24 0 .586.586.88 1.353.88 2.12s-.293 1.535-.88 2.12l-7.1 7.1.013.013 4.17 11.373c.412 1.127-.016 2.428-.99 3.133-.87.626-2.032.716-3.005.23l-3.116-1.558-1.13 1.13z'/></svg>"), auto;
+   /* Cursor verde */
 }
 
 .container {
@@ -518,6 +520,17 @@ main {
 .card a:hover {
    transform: translate(-2px, -2px);
    box-shadow: 6px 6px 0 var(--shadow-color);
+}
+
+.card a:active {
+   background-color: var(--text-color);
+   /* Muda para a cor do texto (preto) */
+   color: var(--primary-color);
+   /* Muda o texto para a cor primária (amarelo) */
+   transform: translate(2px, 2px);
+   /* Move um pouco para baixo e direita */
+   box-shadow: 2px 2px 0 var(--shadow-color);
+   /* Reduz a sombra */
 }
 
 footer {
