@@ -1,24 +1,54 @@
-<meta<meta charset="utf-8">
-   <style>
-      * {
-         margin: 0;
-         padding: 0;
+<meta charset="utf-8">
+<style>
+   * {
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+   }
+</style>
+
+<script>
+
+   let saldo = 100, jogoA, JogoB, maiorValor = 0;
+
+   while (saldo > 0 && saldo < 1500) {
+      //definer resultado dos jogos
+      if (Math.random() < 0.5) {
+         jogoA = -1;
       }
-   </style>
+      else {
+         jogoA = 1;
+      }
+      document.write("Resultado Jogo A = " + jogoA + "<br>");
+      //Aqui vou colocar jogo B
+      if (Math.random() < 0.66) {
+         jogoB = -1;
+      }
+      else {
+         jogoB = 2;
+      }
+      document.write("Resultado Jogo B = " + jogoB + "<br>");
 
-   <script>
-      let saldo = 100;
+      //Logica de saldo
+      document.write("Saldo atual R$ " + saldo + "<br>");
 
-      while (saldo > 0 && saldo < 1500) {
-         document.write("Seu saldo é de R$" + saldo + "<br>");
-         saldo -= 1;
 
-         setTimeout(() => {
-
-         }, 500);
+      if (saldo % 3 === 0) {
+         document.write("Saldo é divisivel por 3 = " + saldo + "<br>");
+         saldo = saldo + jogoB;
+      }
+      else {
+         document.write("Saldo não é divisivel por 3 = " + saldo + "<br>");
+         saldo = saldo + jogoA;
       }
 
+      if (saldo > maiorValor) {
+         maiorValor = saldo;
+      }
+
+   }
+
+   document.write("O maior valor foi = " + maiorValor + "<br>");
 
 
-
-   </script>
+</script>
