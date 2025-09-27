@@ -9,42 +9,49 @@
 
 <script>
 
-   let saldo = 100, jogoA, JogoB, maiorValor = 0;
+   let saldo = 100, jogoA, JogoB, maiorValor = 0, resultadoAleatorio, i = 0;
 
-   while (saldo > 0 && saldo < 1500) {
+   while (saldo > 0 && saldo < 500) {
+      i = i + 1;
+      resultadoAleatorio = Math.random();
+      document.write("1  resultadoAleatorio = " + resultadoAleatorio + "<br>");
       //definer resultado dos jogos
-      if (Math.random() < 0.5) {
+      //Aqui jogo A eu  só vendo
+      if (resultadoAleatorio > 0.5) {
          jogoA = -1;
       }
       else {
          jogoA = 1;
       }
-      document.write("Resultado Jogo A = " + jogoA + "<br>");
-      //Aqui vou colocar jogo B
-      if (Math.random() < 0.66) {
+
+      //Aqui jogo B eu só compro procurando VB de alta
+      if (resultadoAleatorio < 0.666) {
          jogoB = -1;
       }
       else {
          jogoB = 2;
       }
-      document.write("Resultado Jogo B = " + jogoB + "<br>");
+      document.write("2 Resultado Jogo B = " + jogoB + "<br>");
+      document.write("3 Resultado Jogo A = " + jogoA + "<br>");
 
       //Logica de saldo
-      document.write("Saldo atual R$ " + saldo + "<br>");
+      document.write("4 Saldo atual R$ " + saldo + "<br>");
 
 
       if (saldo % 3 === 0) {
-         document.write("Saldo é divisivel por 3 = " + saldo + "<br>");
+         document.write("5 Saldo é divisivel por 3 = " + saldo + "<br>");
          saldo = saldo + jogoB;
       }
-      else {
-         document.write("Saldo não é divisivel por 3 = " + saldo + "<br>");
-         saldo = saldo + jogoA;
-      }
+
+      document.write("6 Saldo não é divisivel por 3 = " + saldo + "<br>");
+      saldo = saldo + jogoA;
+      document.write("DEGUB: Saldo  ATUALIZADO = " + saldo + "<br>");
 
       if (saldo > maiorValor) {
          maiorValor = saldo;
       }
+      document.write("7 Iterações = " + i + "<br>");
+      document.write("8 O maior valor foi = " + maiorValor + "<br>");
 
    }
 
